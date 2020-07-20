@@ -1,12 +1,13 @@
 import { defineConfig } from 'umi';
 import path from 'path';
 
-export default defineConfig({  
+export default defineConfig({
+  // base: '/',
   alias: {
-    '@pub': path.resolve(__dirname, './public')
+    '@pub': path.resolve(__dirname, './public'),
   },
   layout: {
-    name: 'Animation Lab', 
+    name: 'Animation Lab',
   },
   nodeModulesTransform: {
     type: 'none',
@@ -20,36 +21,42 @@ export default defineConfig({
         flatMenu: true,
       },
       routes: [
-        { 
-          path: '/', 
+        {
+          path: '/',
           redirect: '/index',
           component: '@/pages/index',
         },
-        { 
-          path: '/index', 
+        {
+          path: '/index',
           name: '欢迎',
           icon: 'smile',
           component: '@/pages/index',
         },
-        { 
-          path: '/dog', 
+        {
+          path: '/dog',
           name: '狗子',
           icon: 'smile',
           component: '@/pages/Dog/dog',
         },
-        { 
-          path: '/pixi', 
+        {
+          path: '/pixi',
           name: 'PIXI 引擎',
           icon: 'smile',
           component: '@/pages/PIXI/index',
         },
-        { 
-          path: '/phaser', 
+        {
+          path: '/phaser',
           name: 'Phaser 引擎',
           icon: 'smile',
           component: '@/pages/Phaser/Phaser',
         },
-      ]
-    }
+        {
+          path: '/topology',
+          name: 'Topology 库',
+          icon: 'smile',
+          component: '@/pages/Topology/topology',
+        },
+      ],
+    },
   ],
 });
